@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
+import SongList from './SongList';
 
 export default () => {
-  return <div>You are logged in.</div>
+  return <SongList />
 }

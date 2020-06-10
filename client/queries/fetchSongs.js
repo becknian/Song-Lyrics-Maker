@@ -2,13 +2,9 @@ import gql from 'graphql-tag';
 
 export default gql`
   {
-    user {
+    songs {
       id
-      email
-      songs {
-        id
-        title
-      }
+      title
     }
   }
 `;

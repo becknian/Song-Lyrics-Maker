@@ -11,6 +11,9 @@ import App from './components/App';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import Dashboard from './components/Dashboard';
+import SongCreate from './components/SongCreate';
+import SongDetail from './components/SongDetail';
+import SongList from './components/SongList';
 import requireAuth from './components/requireAuth';
 
 const cache = new InMemoryCache({
@@ -28,7 +31,9 @@ const Root = () => {
         <Route path="/" component={App}>
           <Route path="login" component={LoginForm} />
           <Route path="signup" component={SignupForm} />
-          <Route path="dashboard" component={requireAuth(Dashboard)} />
+          <Route path="dashboard" component={requireAuth(SongList)} />
+          <Route path="songs/new" component={requireAuth(SongCreate)} />
+          <Route path="songs/:id" component={requireAuth(SongDetail)} />
         </Route>
       </Router>
     </ApolloProvider>
